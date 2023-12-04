@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Inventario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../style/bootstrap-5.1.3-dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="../style/bootstrap-5.1.3-dist/css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" type="text/css" href="../style/bootstrap-5.1.3-dist/css/bootstrap-utilities.min.css">
+        <link rel="stylesheet" type="text/css" href="../style/font_awesome_5_15_3/css/fontawesome.min.css">
+        <link href="../style/estilosInventario.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body style="height: 100vh; background: linear-gradient(to right, #572400, #8B4513); ">
+        <header style="background: linear-gradient(to right, #572400, #8B4513); ">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar" id="bar1"></span>
+                <span class="bar" id="bar2"></span>
+                <span class="bar" id="bar3"></span>
+            </div>
+            <div class="info-window" id="info-window">
+                <h2 class="titulos">INSERTAR</h2>
+                <div class="row mb-3 mt-5">
+                    <div class="col-md-12">
+                        <button class="btn-block buttonWindow">Insertar ingrediente</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn-block buttonWindow" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Insertar galletas
+                        </button>                   
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Insertar galleta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- Formulario con tres filas -->
+                        <form>
+                            <!-- Renglón 1 -->
+                            <div class="form-group row">
+                                <label for="campo1" class="col-sm-3 col-form-label">Nombre:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="campo1" placeholder="Nombre de la galleta">
+                                </div>
+                            </div>
+
+                            <!-- Renglón 2 -->
+                            <div class="form-group row mt-2">
+                                <label for="campo2" class="col-sm-3 col-form-label">Cantidad:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="campo2" placeholder="0">
+                                </div>
+                            </div>
+
+                            <!-- Renglón 3 -->
+                            <div class="form-group row mt-2">
+                                <label for="campo3" class="col-sm-3 col-form-label">Comentario:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="campo3">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content contenedor">
+            <div class="columna columna1">
+                <h2 class="titulos">INGREDIENTES</h2>
+                <div class="row mb-5">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5">
+                        <h3 class="subtitulos">HARINA</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5">
+                        <h3 class="subtitulos">HUEVO</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5">
+                        <h3 class="subtitulos">LECHE</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5">
+                        <h3 class="subtitulos">CHOCOLATE</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5">
+                        <h3 class="subtitulos">AZUCAR</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5">
+                        <h3 class="subtitulos">MANTEQUILLA</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5">
+                        <h3 class="subtitulos">CREMA</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5">
+                        <h3 class="subtitulos">VAINILLA</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="columna columna2">
+                <h2 class="titulos">GALLETAS</h2>
+                <div class="row mb-3">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="../img/galleta1.jpg" class="rounded image" alt="Galleta 1">
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="../img/galleta2.jpg" class="rounded image" alt="Galleta 1">
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="../img/galleta3.jpg" class="rounded image" alt="Galleta 1">                    
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="../img/galleta9.jpg" class="rounded image" alt="Galleta 1">                    
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="../img/galleta10.jpg" class="rounded image" alt="Galleta 1">                    
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="../img/galleta7.jpg" class="rounded image" alt="Galleta 1">                    
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="../img/galleta6.jpg" class="rounded image" alt="Galleta 1">                    
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="../img/galleta8.jpg" class="rounded image" alt="Galleta 1">                    
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="../img/galleta5.jpg" class="rounded image" alt="Galleta 1">                    
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <!-- Primer Elemento -->
+                    <div class="col-md-5 d-flex align-items-center">
+                        <img src="../img/galleta4.jpg" class="rounded image" alt="Galleta 1">                    
+                    </div>
+                    <div class="col-md-3 d-flex align-items-center">
+                        <input type="text" class="form-control" id="elemento1">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-primary">Botón 1</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button class="btn btn-secondary">Botón 2</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../style/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../style/sweetalert2/sweetalert2.all.min.js"></script>
+        <script src="../style/font_awesome_5_15_3/js/all.min.js"></script>
+        <script src="../js/inventario.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

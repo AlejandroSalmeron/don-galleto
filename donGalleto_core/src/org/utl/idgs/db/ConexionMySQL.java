@@ -17,7 +17,7 @@ public class ConexionMySQL {
     {
         String usuario="root";
         String password="losverdes";
-        String url = "jdbc:mysql://127.0.0.1:3306/nombre_de_la_base_de_datos?useSSL=false&useUnicode=true&characterEncoding=utf-8";
+        String url = "jdbc:mysql://127.0.0.1:3306/dongalleto?useSSL=false&useUnicode=true&characterEncoding=utf-8";
         
         try
         {

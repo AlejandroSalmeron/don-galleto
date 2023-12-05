@@ -10,33 +10,26 @@ package org.utl.idgs.donGalleto;
  */
 public class Venta {
     private int id_venta;
-    private Galleta id_galleta;
-    private double cantidad;
-    private String unidad_medida;
-    private double precio;
+    
+    private String comentario;
+   
     private double total;
 
     public Venta() {
     }
 
-    public Venta(Galleta id_galleta, double cantidad, String unidad_medida, double precio, double total) {
-        this.id_galleta = id_galleta;
-        this.cantidad = cantidad;
-        this.unidad_medida = unidad_medida;
-        this.precio = precio;
+    public Venta(int id_venta, String comentario, double total) {
+        this.id_venta = id_venta;
+        this.comentario = comentario;
+        this.total = total;
+    }
+
+    public Venta(String comentario, double total) {
+        this.comentario = comentario;
         this.total = total;
     }
 
     
-    public Venta(int id_venta, Galleta id_galleta, double cantidad, String unidad_medida, double precio, double total) {
-        this.id_venta = id_venta;
-        this.id_galleta = id_galleta;
-        this.cantidad = cantidad;
-        this.unidad_medida = unidad_medida;
-        this.precio = precio;
-        this.total = total;
-    }
-
     public double getTotal() {
         return total;
     }
@@ -53,41 +46,20 @@ public class Venta {
         this.id_venta = id_venta;
     }
 
-    public Galleta getId_galleta() {
-        return id_galleta;
+    public String getComentario() {
+        return comentario;
     }
 
-    public void setId_galleta(Galleta id_galleta) {
-        this.id_galleta = id_galleta;
-    }
-
-    public double getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(double cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public String getUnidad_medida() {
-        return unidad_medida;
-    }
-
-    public void setUnidad_medida(String unidad_medida) {
-        this.unidad_medida = unidad_medida;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
     @Override
     public String toString() {
-        return "venta{" + "id_venta=" + id_venta + ", id_galleta=" + id_galleta + ", cantidad=" + cantidad + ", unidad_medida=" + unidad_medida + ", precio=" + precio + ", total=" + total + '}';
+        return "Venta{" + "id_venta=" + id_venta + ", comentario=" + comentario + ", total=" + total + '}';
     }
+    
+
+   
     
 }

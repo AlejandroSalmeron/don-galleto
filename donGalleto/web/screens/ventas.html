@@ -22,15 +22,47 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 <span class="bar" id="bar1"></span>
                 <span class="bar" id="bar2"></span>
                 <span class="bar" id="bar3"></span>
+                
             </div>
+            <button onclick="cargarOtroHTML()">obtener estadisticas</button>
+    <div id="contenido"></div>
             <div class="info-window" id="info-window">
+                <h1>CUENTA</h1>
                 <!-- Contenido de la ventana de información -->
-                <label for="label1">Label 1:</label>
-                <span id="label1">Información 1</span>
-                <label for="label2">Label 2:</label>
-                <span id="label2">Información 2</span>
+                <label for="label1">Galletas de Coco:</label>
+                <span id="label1"></span>
+                <label for="label2">Galletas de Gengibre:</label>
+                <span id="label2"></span>
+                <label for="label3">Galletas de Naranja:</label>
+                <span id="label3"></span>
+                <label for="label4">Galletas de Aniz:</label>
+                <span id="label4"></span>
+                <label for="label5">Galletas de Ron:</label>
+                <span id="label5"></span>
+                <label for="label6">Galletas de Chocolate:</label>
+                <span id="label6"></span>
+                <label for="label7">Galletas de Arroz:</label>
+                <span id="label7"></span>
+                <label for="label8">Galletas con Relleno:</label>
+                <span id="label8"></span>
+                <label for="label9">Galletas de Leche:</label>
+                <span id="label9"></span>
+                <label for="label10">Galletas de Vainilla:</label>
+                <span id="label10"></span>
+
+                <label for="label11">Comentarios</label>
+                <span id="label11">
+                    <input type="text" class="form-control" style="width: 170px;" id="comen">
+
+                </span>
+                <label for="label12">Total</label>
+                <span id="label12"></span>
                 <!-- ... Añade más labels y spans según sea necesario ... -->
-                <button id="close-button">Cerrar</button>
+                <button id="close-button" onclick="total();">Realizar Venta-Imprimir tikect</button>
+                <h1> </h1>
+                <div>
+                    <button id="close-button" onclick="total();">Realizar Venta</button>
+                </div>
             </div>
         </header>
 
@@ -43,38 +75,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 1</label>
+                                    <label class="mb-0">Por unidad</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaCoco1();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaCoco1();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 2</label>
+                                    <label class="mb-0">Media Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaCoco2();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaCoco2();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 3</label>
+                                    <label class="mb-0">Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaCoco3();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaCoco3();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 4</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Peso</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="peso">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick=" sumarGalletaCoco4();">+</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 5</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Pesaje</label>
+                                    <input type="number" class="form-control" style="width: 60px;" id="pesaje">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick=" sumarGalletaCoco5();">+</button>
                                     </div>
                                 </li>
                             </ul>
@@ -89,38 +121,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 1</label>
+                                    <label class="mb-0">Por unidad</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaGengibre1();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaGengibre1();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 2</label>
+                                    <label class="mb-0">Media Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaGengibre2();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaGengibre2();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 3</label>
+                                    <label class="mb-0">Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaGengibre3();" >+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaGengibre3();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 4</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Peso</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="peso1">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaGengibre4();">+</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 5</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Pesaje</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="pesaje1">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaGengibre5();">+</button>
                                     </div>
                                 </li>
                             </ul>
@@ -136,38 +168,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 1</label>
+                                    <label class="mb-0">Por unidad</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaNaranja1();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick=" restarGalletaNaranja1();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 2</label>
+                                    <label class="mb-0">Media Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaNaranja2();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick=" restarGalletaNaranja2();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 3</label>
+                                    <label class="mb-0">Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaNaranja3();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick=" restarGalletaNaranja3();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 4</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Peso</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="peso2">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle"  onclick="sumarGalletaNaranja4();">+</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 5</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Pesaje</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="pesaje2">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle"  onclick="sumarGalletaNaranja5();">+</button>
                                     </div>
                                 </li>
                             </ul>
@@ -182,36 +214,36 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 1</label>
+                                    <label class="mb-0">Por unidad</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaAniz1();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaAniz1();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 2</label>
+                                    <label class="mb-0">Media Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle"  onclick="sumarGalletaAniz2();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaAniz2();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 3</label>
+                                    <label class="mb-0">Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaAniz3();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaAniz3();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 4</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Peso</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="peso3">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaAniz4();">+</button>
                                     </div>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 5</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                <li class="list-group-item d-flex justify-content-between align-items-center" onclick="sumarGalletaAniz5();">
+                                    <label class="mb-0">Pesaje</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="pesaje3">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
                                     </div>
@@ -229,38 +261,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 1</label>
+                                    <label class="mb-0">Por unidad</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaRon1();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaRon1();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 2</label>
+                                    <label class="mb-0">Media Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaRon2();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaRon2();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 3</label>
+                                    <label class="mb-0">Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaRon3();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaRon3();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 4</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Peso</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="peso4">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaRon4();">+</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 5</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Pesaje</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="pesaje4">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaRon5();">+</button>
                                     </div>
                                 </li>
                             </ul>
@@ -275,38 +307,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 1</label>
+                                    <label class="mb-0">Por unidad</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaChocolate1();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaChocolate1();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 2</label>
+                                    <label class="mb-0">Media Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaChocolate2();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaChocolate2();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 3</label>
+                                    <label class="mb-0">Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaChocolate3();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaChocolate3();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 4</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Peso</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="peso5">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaChocolate4();">+</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 5</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Pesaje</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="pesaje5">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaChocolate5();">+</button>
                                     </div>
                                 </li>
                             </ul>
@@ -322,38 +354,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 1</label>
+                                    <label class="mb-0">Por unidad</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaArroz1();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaArroz1();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 2</label>
+                                    <label class="mb-0">Media Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaArroz2();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaArroz2();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 3</label>
+                                    <label class="mb-0">Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaArroz3();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaArroz3();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 4</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Peso</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="peso6">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaArroz4();">+</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 5</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Pesaje</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="pesaje6">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaArroz5();">+</button>
                                     </div>
                                 </li>
                             </ul>
@@ -368,38 +400,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 1</label>
+                                    <label class="mb-0">Por unidad</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaConRelleno1();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaConRelleno1();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 2</label>
+                                    <label class="mb-0">Media Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaConRelleno2();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaConRelleno2();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 3</label>
+                                    <label class="mb-0">Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaConRelleno3();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaConRelleno3();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 4</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Peso</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="peso7">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaConRelleno4();">+</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 5</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Pesaje</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="pesaje7">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaConRelleno5();">+</button>
                                     </div>
                                 </li>
                             </ul>
@@ -414,38 +446,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 1</label>
+                                    <label class="mb-0">Por unidad</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaLeche1();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaLeche1();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 2</label>
+                                    <label class="mb-0">Media Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaLeche2();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaLeche2();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 3</label>
+                                    <label class="mb-0">Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaLeche3();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaLeche3();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 4</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Peso</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="peso8">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaLeche4();">+</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 5</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Pesaje</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="pesaje8">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaLeche5();">+</button>
                                     </div>
                                 </li>
                             </ul>
@@ -460,38 +492,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 1</label>
+                                    <label class="mb-0">Por unidad</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaVainilla1();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaVainilla1();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 2</label>
+                                    <label class="mb-0">Media Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaVainilla2();" >+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaVainilla2();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 3</label>
+                                    <label class="mb-0">Caja</label>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
-                                        <button type="button" class="btn btn-light buttonRemove rounded-circle">-</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaVainilla3();">+</button>
+                                        <button type="button" class="btn btn-light buttonRemove rounded-circle" onclick="restarGalletaVainilla3();">-</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 4</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Peso</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="peso9">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaVainilla4();">+</button>
                                     </div>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <label class="mb-0">Texto 5</label>
-                                    <input type="text" class="form-control" style="width: 60px;">
+                                    <label class="mb-0">Pesaje</label>
+                                    <input type="text" class="form-control" style="width: 60px;" id="pesaje9">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-light buttonAdd rounded-circle">+</button>
+                                        <button type="button" class="btn btn-light buttonAdd rounded-circle" onclick="sumarGalletaVainilla5();">+</button>
                                     </div>
                                 </li>
                             </ul>
@@ -500,6 +532,844 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 </div>
             </div>
         </div>
+        <script>
+            var valorActual = 0; // Inicializar el valor actual en 0
+
+            // Función para agregar 20 al valor actual y mostrarlo en label1
+            function sumarGalletaCoco1() {
+                valorActual += 20; // Sumar 20 al valor actual
+                mostrarValorGalletaCoco1(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaCoco1() {
+                if (valorActual >= 20) {
+                    valorActual -= 20; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaCoco1(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaCoco2() {
+                valorActual += 70; // Sumar 20 al valor actual
+                mostrarValorGalletaCoco1(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaCoco2() {
+                if (valorActual >= 70) {
+                    valorActual -= 70; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaCoco1(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaCoco3() {
+                valorActual += 140; // Sumar 20 al valor actual
+                mostrarValorGalletaCoco1(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaCoco3() {
+                if (valorActual >= 140) {
+                    valorActual -= 140; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaCoco1(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+
+            function sumarGalletaCoco4() {
+                var inputPeso = document.getElementById('peso'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPeso.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual += valorInput; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaCoco1(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de peso");
+                }
+            }
+            function sumarGalletaCoco5() {
+                var inputPesaje = document.getElementById('pesaje'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPesaje.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual += valorInput * 180; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaCoco1(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de pesaje");
+                }
+            }
+            function mostrarValorGalletaCoco1() {
+                var label1 = document.getElementById('label1'); // Seleccionar el elemento con id label1
+                label1.textContent = "TOTALP/G: " + valorActual; // Mostrar el valor actualizado en label1
+            }
+ //EMPIEZAN LAS GALLETAS DE GENGIBRE
+            var valorActual2 = 0; // Inicializar el valor actual en 0
+
+            // Función para agregar 20 al valor actual y mostrarlo en label1
+            function sumarGalletaGengibre1() {
+                valorActual2 += 19; // Sumar 20 al valor actual
+                mostrarValorGalletaGengibre();// Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaGengibre1() {
+                if (valorActual2 >= 19) {
+                    valorActual2 -= 19; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaGengibre(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaGengibre2() {
+                valorActual2 += 65; // Sumar 20 al valor actual
+                mostrarValorGalletaGengibre(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaGengibre2() {
+                if (valorActual2 >= 65) {
+                    valorActual2 -= 65; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaGengibre(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaGengibre3() {
+                valorActual2 += 130; // Sumar 20 al valor actual
+                mostrarValorGalletaGengibre(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaGengibre3() {
+                if (valorActual2 >= 130) {
+                    valorActual2 -= 130; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaGengibre(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+
+            function sumarGalletaGengibre4() {
+                var inputPeso = document.getElementById('peso1'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPeso.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual2 += valorInput; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaGengibre(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de peso");
+                }
+            }
+            function sumarGalletaGengibre5() {
+                var inputPesaje = document.getElementById('pesaje1'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPesaje.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual2 += valorInput * 170; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaGengibre(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de pesaje");
+                }
+            }
+
+
+
+            // Función para mostrar el valor actual en label1
+            function mostrarValorGalletaGengibre() {
+                var label1 = document.getElementById('label2'); // Seleccionar el elemento con id label1
+                label1.textContent = "TOTALP/G: " + valorActual2; // Mostrar el valor actualizado en label1
+            }
+
+
+
+            //EMPIEZAN LAS GALLETAS DE NARANJA
+            var valorActual3 = 0; // Inicializar el valor actual en 0
+
+            // Función para agregar 20 al valor actual y mostrarlo en label1
+            function sumarGalletaNaranja1() {
+                valorActual3 += 19; // Sumar 20 al valor actual
+                mostrarValorGalletaNaranja();// Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaNaranja1() {
+                if (valorActual3 >= 19) {
+                    valorActual3 -= 19; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaNaranja(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaNaranja2() {
+                valorActual3 += 65; // Sumar 20 al valor actual
+                mostrarValorGalletaNaranja(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaNaranja2() {
+                if (valorActual3 >= 65) {
+                    valorActual3 -= 65; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaNaranja(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaNaranja3() {
+                valorActual3 += 130; // Sumar 20 al valor actual
+                mostrarValorGalletaNaranja(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaNaranja3() {
+                if (valorActual3 >= 130) {
+                    valorActual3 -= 130; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaNaranja(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+
+            function sumarGalletaNaranja4() {
+                var inputPeso = document.getElementById('peso2'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPeso.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual3 += valorInput; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaNaranja(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de peso");
+                }
+            }
+            function sumarGalletaNaranja5() {
+                var inputPesaje = document.getElementById('pesaje2'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPesaje.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual3 += valorInput * 170; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaNaranja(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de pesaje");
+                }
+            }
+
+
+
+            // Función para mostrar el valor actual en label1
+            function mostrarValorGalletaNaranja() {
+                var label1 = document.getElementById('label3'); // Seleccionar el elemento con id label1
+                label1.textContent = "TOTALP/G: " + valorActual3; // Mostrar el valor actualizado en label1
+            }
+
+
+            //EMPIEZAN LAS GALLETAS DE ANIZ
+            var valorActual4 = 0; // Inicializar el valor actual en 0
+
+            // Función para agregar 20 al valor actual y mostrarlo en label1
+            function sumarGalletaAniz1() {
+                valorActual4 += 19; // Sumar 20 al valor actual
+                mostrarValorGalletaAniz();// Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaAniz1() {
+                if (valorActual4 >= 19) {
+                    valorActual4 -= 19; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaAniz(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaAniz2() {
+                valorActual4 += 65; // Sumar 20 al valor actual
+                mostrarValorGalletaAniz(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaAniz2() {
+                if (valorActual4 >= 65) {
+                    valorActual4 -= 65; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaAniz(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaAniz3() {
+                valorActual4 += 130; // Sumar 20 al valor actual
+                mostrarValorGalletaAniz(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaAniz3() {
+                if (valorActual4 >= 130) {
+                    valorActual4 -= 130; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaAniz(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+
+            function sumarGalletaAniz4() {
+                var inputPeso = document.getElementById('peso3'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPeso.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual4 += valorInput; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaAniz(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de peso");
+                }
+            }
+            function sumarGalletaAniz5() {
+                var inputPesaje = document.getElementById('pesaje3'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPesaje.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual4 += valorInput * 170; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaAniz(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de pesaje");
+                }
+            }
+
+
+
+            // Función para mostrar el valor actual en label1
+            function mostrarValorGalletaAniz() {
+                var label1 = document.getElementById('label4'); // Seleccionar el elemento con id label1
+                label1.textContent = "TOTALP/G: " + valorActual4; // Mostrar el valor actualizado en label1
+            }
+
+            //EMPIEZAN LAS GALLETAS DE RON
+            var valorActual5 = 0; // Inicializar el valor actual en 0
+
+            // Función para agregar 20 al valor actual y mostrarlo en label1
+            function sumarGalletaRon1() {
+                valorActual5 += 19; // Sumar 20 al valor actual
+                mostrarValorGalletaRon();// Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaRon1() {
+                if (valorActual5 >= 19) {
+                    valorActual5 -= 19; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaRon(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaRon2() {
+                valorActual5 += 65; // Sumar 20 al valor actual
+                mostrarValorGalletaRon(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaRon2() {
+                if (valorActual5 >= 65) {
+                    valorActual5 -= 65; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaRon(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaRon3() {
+                valorActual5 += 130; // Sumar 20 al valor actual
+                mostrarValorGalletaRon(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaRon3() {
+                if (valorActual5 >= 130) {
+                    valorActual5 -= 130; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaRon(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+
+            function sumarGalletaRon4() {
+                var inputPeso = document.getElementById('peso4'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPeso.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual5 += valorInput; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaRon(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de peso");
+                }
+            }
+            function sumarGalletaRon5() {
+                var inputPesaje = document.getElementById('pesaje4'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPesaje.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual5 += valorInput * 170; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaRon(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de pesaje");
+                }
+            }
+
+
+
+            // Función para mostrar el valor actual en label1
+            function mostrarValorGalletaRon() {
+                var label1 = document.getElementById('label5'); // Seleccionar el elemento con id label1
+                label1.textContent = "TOTALP/G: " + valorActual5; // Mostrar el valor actualizado en label1
+            }
+
+
+
+            //EMPIEZAN LAS GALLETAS DE CHOCOLATE
+            var valorActual6 = 0; // Inicializar el valor actual en 0
+
+            // Función para agregar 20 al valor actual y mostrarlo en label1
+            function sumarGalletaChocolate1() {
+                valorActual6 += 19; // Sumar 20 al valor actual
+                mostrarValorGalletaChocolate();// Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaChocolate1() {
+                if (valorActual6 >= 19) {
+                    valorActual6 -= 19; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaChocolate(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaChocolate2() {
+                valorActual6 += 65; // Sumar 20 al valor actual
+                mostrarValorGalletaChocolate(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaChocolate2() {
+                if (valorActual6 >= 65) {
+                    valorActual6 -= 65; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaChocolate(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaChocolate3() {
+                valorActual6 += 130; // Sumar 20 al valor actual
+                mostrarValorGalletaChocolate(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaChocolate3() {
+                if (valorActual6 >= 130) {
+                    valorActual6 -= 130; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaChocolate(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+
+            function sumarGalletaChocolate4() {
+                var inputPeso = document.getElementById('peso5'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPeso.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual6 += valorInput; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaChocolate(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de peso");
+                }
+            }
+            function sumarGalletaChocolate5() {
+                var inputPesaje = document.getElementById('pesaje5'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPesaje.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual6 += valorInput * 170; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaChocolate(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de pesaje");
+                }
+            }
+
+            // Función para mostrar el valor actual en label1
+            function mostrarValorGalletaChocolate() {
+                var label1 = document.getElementById('label6'); // Seleccionar el elemento con id label1
+                label1.textContent = "TOTALP/G: " + valorActual6; // Mostrar el valor actualizado en label1
+            }
+
+
+            //EMPIEZAN LAS GALLETAS DE ARROZ
+            var valorActual7 = 0; // Inicializar el valor actual en 0
+
+            // Función para agregar 20 al valor actual y mostrarlo en label1
+            function sumarGalletaArroz1() {
+                valorActual7 += 19; // Sumar 20 al valor actual
+                mostrarValorGalletaArroz();// Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaArroz1() {
+                if (valorActual7 >= 19) {
+                    valorActual7 -= 19; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaArroz(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaArroz2() {
+                valorActual7 += 65; // Sumar 20 al valor actual
+                mostrarValorGalletaArroz(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaArroz2() {
+                if (valorActual7 >= 65) {
+                    valorActual7 -= 65; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaArroz(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaArroz3() {
+                valorActual7 += 130; // Sumar 20 al valor actual
+                mostrarValorGalletaArroz(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaArroz3() {
+                if (valorActual7 >= 130) {
+                    valorActual7 -= 130; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaArroz(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+
+            function sumarGalletaArroz4() {
+                var inputPeso = document.getElementById('peso6'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPeso.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual7 += valorInput; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaArroz(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de peso");
+                }
+            }
+            function sumarGalletaArroz5() {
+                var inputPesaje = document.getElementById('pesaje6'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPesaje.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual7 += valorInput * 170; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaArroz(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de pesaje");
+                }
+            }
+
+
+
+            // Función para mostrar el valor actual en label1
+            function mostrarValorGalletaArroz() {
+                var label1 = document.getElementById('label7'); // Seleccionar el elemento con id label1
+                label1.textContent = "TOTALP/G: " + valorActual7; // Mostrar el valor actualizado en label1
+            }
+
+
+
+            //EMPIEZAN LAS GALLETAS CON RELLENO
+            var valorActual8 = 0; // Inicializar el valor actual en 0
+
+            // Función para agregar 20 al valor actual y mostrarlo en label1
+            function sumarGalletaConRelleno1() {
+                valorActual8 += 19; // Sumar 20 al valor actual
+                mostrarValorGalletaConRelleno();// Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaConRelleno1() {
+                if (valorActual8 >= 19) {
+                    valorActual8 -= 19; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaConRelleno(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaConRelleno2() {
+                valorActual8 += 65; // Sumar 20 al valor actual
+                mostrarValorGalletaConRelleno(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaConRelleno2() {
+                if (valorActual8 >= 65) {
+                    valorActual8 -= 65; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaConRelleno(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaConRelleno3() {
+                valorActual8 += 130; // Sumar 20 al valor actual
+                mostrarValorGalletaConRelleno(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaConRelleno3() {
+                if (valorActual8 >= 130) {
+                    valorActual8 -= 130; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaConRelleno(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+
+            function sumarGalletaConRelleno4() {
+                var inputPeso = document.getElementById('peso7'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPeso.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual8 += valorInput; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaConRelleno(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de peso");
+                }
+            }
+            function sumarGalletaConRelleno5() {
+                var inputPesaje = document.getElementById('pesaje7'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPesaje.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual8 += valorInput * 170; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaConRelleno(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de pesaje");
+                }
+            }
+
+            // Función para mostrar el valor actual en label1
+            function mostrarValorGalletaConRelleno() {
+                var label1 = document.getElementById('label8'); // Seleccionar el elemento con id label1
+                label1.textContent = "TOTALP/G: " + valorActual8; // Mostrar el valor actualizado en label1
+            }
+
+
+
+            //EMPIEZAN LAS GALLETAS DE LECHE
+            var valorActual9 = 0; // Inicializar el valor actual en 0
+
+            // Función para agregar 20 al valor actual y mostrarlo en label1
+            function sumarGalletaLeche1() {
+                valorActual9 += 19; // Sumar 20 al valor actual
+                mostrarValorGalletaLeche();// Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaLeche1() {
+                if (valorActual9 >= 19) {
+                    valorActual9 -= 19; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaLeche(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaLeche2() {
+                valorActual9 += 65; // Sumar 20 al valor actual
+                mostrarValorGalletaLeche(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaLeche2() {
+                if (valorActual9 >= 65) {
+                    valorActual9 -= 65; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaLeche(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaLeche3() {
+                valorActual9 += 130; // Sumar 20 al valor actual
+                mostrarValorGalletaLeche(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaLeche3() {
+                if (valorActual9 >= 130) {
+                    valorActual9 -= 130; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaLeche(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+
+            function sumarGalletaLeche4() {
+                var inputPeso = document.getElementById('peso8'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPeso.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual9 += valorInput; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaLeche(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de peso");
+                }
+            }
+            function sumarGalletaLeche5() {
+                var inputPesaje = document.getElementById('pesaje8'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPesaje.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual9 += valorInput * 170; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaLeche(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de pesaje");
+                }
+            }
+
+            // Función para mostrar el valor actual en label1
+            function mostrarValorGalletaLeche() {
+                var label1 = document.getElementById('label9'); // Seleccionar el elemento con id label1
+                label1.textContent = "TOTALP/G: " + valorActual9; // Mostrar el valor actualizado en label1
+            }
+
+
+            //EMPIEZAN LAS GALLETAS DE VAINILLA
+            var valorActual10 = 0; // Inicializar el valor actual en 0
+
+            // Función para agregar 20 al valor actual y mostrarlo en label1
+            function sumarGalletaVainilla1() {
+                valorActual10 += 19; // Sumar 20 al valor actual
+                mostrarValorGalletaVainilla();// Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaVainilla1() {
+                if (valorActual10 >= 19) {
+                    valorActual10 -= 19; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaVainilla(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaVainilla2() {
+                valorActual10 += 65; // Sumar 20 al valor actual
+                mostrarValorGalletaVainilla(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaVainilla2() {
+                if (valorActual10 >= 65) {
+                    valorActual10 -= 65; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaVainilla(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+            function sumarGalletaVainilla3() {
+                valorActual10 += 130; // Sumar 20 al valor actual
+                mostrarValorGalletaVainilla(); // Mostrar el valor actualizado en label1
+            }
+
+            // Función para restar 20 al valor actual y mostrarlo en label1
+            function restarGalletaVainilla3() {
+                if (valorActual10 >= 130) {
+                    valorActual10 -= 130; // Restar 20 al valor actual si es mayor o igual a 20
+                    mostrarValorGalletaVainilla(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("No tienes galletas ya para restar");
+                }
+            }
+
+            function sumarGalletaVainilla4() {
+                var inputPeso = document.getElementById('peso9'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPeso.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual10 += valorInput; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaVainilla(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de peso");
+                }
+            }
+            function sumarGalletaVainilla5() {
+                var inputPesaje = document.getElementById('pesaje9'); // Obtener el input de pesaje por su ID
+                var valorInput = parseInt(inputPesaje.value); // Obtener el valor del input y convertirlo a entero
+
+                if (!isNaN(valorInput)) { // Verificar si es un número válido
+                    valorActual10 += valorInput * 170; // Sumar el valor del input al valor actual
+                    mostrarValorGalletaVainilla(); // Mostrar el valor actualizado en label1
+                } else {
+                    alert("Ingrese un valor numérico en el campo de pesaje");
+                }
+            }
+
+
+
+            // Función para mostrar el valor actual en label1
+            function mostrarValorGalletaVainilla() {
+                var label1 = document.getElementById('label10'); // Seleccionar el elemento con id label1
+                label1.textContent = "TOTALP/G: " + valorActual10; // Mostrar el valor actualizado en label1
+            }
+            function total() {
+                var valorActual12 = valorActual + valorActual2 + valorActual3 + valorActual4 + valorActual5 + valorActual6 + valorActual7 + valorActual8 + valorActual9 + valorActual10;
+                var label1 = document.getElementById('label12'); // Seleccionar el elemento con id label1
+                label1.textContent = "$" + valorActual12; // Mostrar el valor actualizado en label1
+                insertarVenta(valorActual12);
+                
+            }
+
+            function insertarVenta(total) {
+                //let total = document.getElementById("label12").value;
+                let comentario = document.getElementById("comen").value;
+
+
+                let datos = JSON.stringify({
+                    total: total,
+                    comentario: comentario
+                });
+                let parametros = new URLSearchParams({datos: datos});
+
+                fetch("../api/venta/insertarVenta",
+                        {
+                            method: 'POST',
+                            body: (parametros),
+                            headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
+                        }).then(response => response.json())
+                        .then(data => {
+
+                            if (data.error) {
+                                alert(data.error);
+                            } else {
+
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Venta Realizada',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                            }
+                        });
+            }
+
+
+        function cargarOtroHTML() {
+            // Aquí se carga el nuevo HTML al hacer clic en el botón
+            let nuevaVentana = window.open('otro.html', '_blank', 'width=600,height=400');
+            
+            // Si la ventana emergente se bloquea, mostrar un mensaje
+            if (!nuevaVentana || nuevaVentana.closed || typeof nuevaVentana.closed == 'undefined') {
+                alert('La ventana emergente fue bloqueada. Asegúrate de permitir ventanas emergentes en tu navegador.');
+        }
+
+        }
+    
+</script>
+
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
         <script src="../style/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
         <script src="../style/sweetalert2/sweetalert2.all.min.js"></script>
         <script src="../style/font_awesome_5_15_3/js/all.min.js"></script>

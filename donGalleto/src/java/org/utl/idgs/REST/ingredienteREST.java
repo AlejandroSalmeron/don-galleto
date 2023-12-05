@@ -6,42 +6,41 @@ package org.utl.idgs.REST;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
+import com.sun.research.ws.wadl.Application;
 import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.Application;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.sql.SQLException;
 import java.util.List;
-import org.utl.idgs.cuidador.controller.ControllerGalleta;
 import org.utl.idgs.cuidador.controller.ControllerIngrediente;
-import org.utl.idgs.donGalleto.Galleta;
+import org.utl.idgs.donGalleto.Ingrediente;
 
 /**
  *
  * @author yahir
  */
-@Path("galleta")
-public class galletaREST extends Application {
+@Path("ingrediente")
+public class ingredienteREST extends Application{
 
-    @Path("insertarGalleta")
+    @Path("insertarIngrediente")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Response insertarGalleta(@FormParam("datos") @DefaultValue("") String datos) {
+    public Response insertarIngrediente(@FormParam("datos") @DefaultValue("") String datos) {
         Gson gson = new Gson();
         String out = "";
 
-        Galleta galleta = new Galleta();
-        galleta = gson.fromJson(datos, Galleta.class);
-        ControllerGalleta cg = new ControllerGalleta();
+        Ingrediente ingrediente = new Ingrediente();
+        ingrediente = gson.fromJson(datos, Ingrediente.class);
+        ControllerIngrediente ci = new ControllerIngrediente();
 
         try {
-            cg.insertarGalleta(galleta);
-            out = gson.toJson(galleta);
+            ci.insertarIngrediente(ingrediente);
+            out = gson.toJson(ingrediente);
         } catch (JsonParseException json) {
             out = """
                    {"error": "Error de formato"}
@@ -53,20 +52,20 @@ public class galletaREST extends Application {
         return Response.status(Response.Status.OK).entity(out).build();
 
     }
-    
-    @Path("actualizarGalleta")
+
+    @Path("actualizarIngrediente")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Response actualizarGalleta(@FormParam("datos") @DefaultValue("") String datos) {
+    public Response actualizarIngrediente(@FormParam("datos") @DefaultValue("") String datos) {
         Gson gson = new Gson();
-        Galleta galleta = new Galleta();
+        Ingrediente ingrediente = new Ingrediente();
         //El punto class es la especificacion que contiene la clase
-        galleta = gson.fromJson(datos, Galleta.class);
+        ingrediente = gson.fromJson(datos, Ingrediente.class);
         String out = "";
-        ControllerGalleta mayor = new ControllerGalleta();
+        ControllerIngrediente ci = new ControllerIngrediente();
         try {
-            mayor.actualizarGalleta(galleta);
-            out = gson.toJson(galleta);
+            ci.actualizarIngrediente(ingrediente);
+            out = gson.toJson(ingrediente);
         } catch (JsonParseException jpe) {
             out = """
                    {"error": "Error de formato"}
@@ -79,38 +78,36 @@ public class galletaREST extends Application {
 
         return Response.status(Response.Status.OK).entity(out).build();
     }
-    
-    
-    @Path("getGalleta")
+
+    @Path("getIngrediente")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getGalleta(@FormParam("id") @DefaultValue("") String id) {
-        String out="";
-        int id_gall = Integer.parseInt(id);
+    public Response getIngrediente(@FormParam("id") @DefaultValue("") String id) {
+        String out = "";
+        int id_ing = Integer.parseInt(id);
         try {
-            ControllerGalleta cg = new ControllerGalleta();
-           Galleta galleta = cg.obtenerDatosGalleta(id_gall);
+            ControllerIngrediente ci = new ControllerIngrediente();
+            Ingrediente ingrediente = ci.obtenerDatosIngrediente(id_ing);
             Gson gs = new Gson();
-            out = gs.toJson(galleta);
-        } catch (Exception ex){
+            out = gs.toJson(ingrediente);
+        } catch (Exception ex) {
             System.out.println(ex.toString());
             //Poner diagonal inversa Alt+92
-            out="{\"error\":\""+ex.toString()+"\"}";
+            out = "{\"error\":\"" + ex.toString() + "\"}";
         }
         return Response.status(Response.Status.OK).entity(out).build();
     }
     
-        
-    @Path("getAllGalletas")
+    @Path("getAllIngredientes")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllGalletas() {
+    public Response getAllIngredientes() {
         String out = "";
         try {
-            ControllerGalleta ci = new ControllerGalleta();
-            List<Galleta> galletas = ci.getAllGalletas();
+            ControllerIngrediente ci = new ControllerIngrediente();
+            List<Ingrediente> ingredientes = ci.getAllIngredientes();
             Gson gs = new Gson();
-            out = gs.toJson(galletas);
+            out = gs.toJson(ingredientes);
         } catch (Exception ex) {
             System.out.println(ex.toString());
             //Poner diagonal inversa Alt+92

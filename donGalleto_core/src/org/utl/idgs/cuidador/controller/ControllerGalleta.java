@@ -6,10 +6,13 @@ package org.utl.idgs.cuidador.controller;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
 import org.utl.idgs.db.ConexionMySQL;
 import org.utl.idgs.donGalleto.Galleta;
 
@@ -108,6 +111,29 @@ public class ControllerGalleta {
 
     }
 
+    
+       public List <Galleta> getAllGalletas() throws SQLException {
+        String query = "SELECT * FROM galleta";
+
+         ConexionMySQL sql = new ConexionMySQL();
+
+        Connection conn = sql.open();
+
+        PreparedStatement pstmt = conn.prepareStatement(query);
+
+        ResultSet rs = pstmt.executeQuery();
+        List<Galleta> lisg = new ArrayList<>();
+
+        while (rs.next()) {
+            lisg.add(fillGalleta(rs));
+        }
+        rs.close();
+        pstmt.close();
+        sql.close();
+        System.out.println(lisg);
+        return lisg;
+
+    }
     private Galleta fillGalleta(ResultSet rs) throws SQLException {
         //Creamos un Objeto de Tipo empleado
         Galleta g = new Galleta();

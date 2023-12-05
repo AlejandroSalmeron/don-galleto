@@ -6,10 +6,13 @@ package org.utl.idgs.cuidador.controller;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
 import org.utl.idgs.db.ConexionMySQL;
 import org.utl.idgs.donGalleto.Ingrediente;
 
@@ -102,6 +105,29 @@ public class ControllerIngrediente {
         mySQL.close();
        //System.out.println(ingrediente);
         return ingrediente;
+
+    }
+    
+    public List <Ingrediente> getAllIngredientes() throws SQLException {
+        String query = "SELECT * FROM ingredientes";
+
+         ConexionMySQL sql = new ConexionMySQL();
+
+        Connection conn = sql.open();
+
+        PreparedStatement pstmt = conn.prepareStatement(query);
+
+        ResultSet rs = pstmt.executeQuery();
+        List<Ingrediente> lisI = new ArrayList<>();
+
+        while (rs.next()) {
+            lisI.add(fillIngrediente(rs));
+        }
+        rs.close();
+        pstmt.close();
+        sql.close();
+        System.out.println(lisI);
+        return lisI;
 
     }
 

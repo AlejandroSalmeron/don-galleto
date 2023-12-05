@@ -20,10 +20,12 @@ public class pruebas {
     public static void main(String[] args) throws SQLException {
         //insertarGalleta();
         //actualizarGalleta();
-        obtenerGalleta();
+        //obtenerGalleta();
         //insertarIngrediente();
         //actualizarIngrediente();
         //obtenerIngrediente();
+        //getAllIngredientes();
+        getAllGalletas();
     }
 
     public static void insertarGalleta() throws SQLException {
@@ -63,5 +65,13 @@ public class pruebas {
         i.setId_ingrediente(1);
         c.obtenerDatosIngrediente(i.getId_ingrediente());
     }
-
+    public static void getAllIngredientes() throws SQLException{
+        ControllerIngrediente c = new ControllerIngrediente();
+        c.getAllIngredientes();
+    }
+    
+      public static void getAllGalletas() throws SQLException{
+        ControllerGalleta c = new ControllerGalleta();
+        c.getAllGalletas();
+    }
 }

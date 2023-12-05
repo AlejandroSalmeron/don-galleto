@@ -27,7 +27,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 <h2 class="titulos">INSERTAR</h2>
                 <div class="row mb-3 mt-5">
                     <div class="col-md-12">
-                        <button class="btn-block buttonWindow">Insertar ingrediente</button>
+                        <button type="button" class="btn-block buttonWindow" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            Insertar ingrediente
+                        </button>
                     </div>
                 </div>
                 <div class="row">
@@ -39,6 +41,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 </div>
             </div>
         </header>
+
+        <button type="button" class="btn-dark" onclick="getAllIngredientes();">VER CANTIDAD INGREDIENTES</button>
+        <button type="button" class="btn-dark" onclick="getAllGalletas();">VER CANTIDAD GALLETAS</button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -55,7 +60,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             <div class="form-group row">
                                 <label for="campo1" class="col-sm-3 col-form-label">Nombre:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="campo1" placeholder="Nombre de la galleta">
+                                    <input type="text" class="form-control" id="txtNombreGalleta" placeholder="Nombre de la galleta">
                                 </div>
                             </div>
 
@@ -63,15 +68,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             <div class="form-group row mt-2">
                                 <label for="campo2" class="col-sm-3 col-form-label">Cantidad:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="campo2" placeholder="0">
+                                    <input type="text" class="form-control" id="txtCantidadGalleta" placeholder="0">
                                 </div>
                             </div>
 
                             <!-- Renglón 3 -->
                             <div class="form-group row mt-2">
+                                <label for="campo3" class="col-sm-3 col-form-label">Precio:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtPrecioGalleta">
+                                </div>
+                            </div>
+
+                            <div class="form-group row mt-2">
                                 <label for="campo3" class="col-sm-3 col-form-label">Comentario:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="campo3">
+                                    <input type="text" class="form-control" id="txtComentarioGalleta">
                                 </div>
                             </div>
                         </form>
@@ -79,11 +91,155 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-primary" onclick="insertarGalleta();">Guardar</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modificar galleta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- Formulario con tres filas -->
+                        <form>
+                            <!-- Renglón 1 -->
+                            <div class="form-group row">
+                                <label for="campo1" class="col-sm-3 col-form-label">Nombre:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtNombreGalleta2" placeholder="Nombre de la galleta">
+                                </div>
+                            </div>
+
+                            <!-- Renglón 2 -->
+                            <div class="form-group row mt-2">
+                                <label for="campo2" class="col-sm-3 col-form-label">Cantidad:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtCantidadGalleta2" placeholder="0">
+                                </div>
+                            </div>
+
+                            <!-- Renglón 3 -->
+                            <div class="form-group row mt-2">
+                                <label for="campo3" class="col-sm-3 col-form-label">Precio:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtPrecioGalleta2">
+                                </div>
+                            </div>
+
+                            <div class="form-group row mt-2">
+                                <label for="campo3" class="col-sm-3 col-form-label">Comentario:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtComentarioGalleta2">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="actualizarGalleta();">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Insertar ingrediente</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- Formulario con tres filas -->
+                        <form>
+                            <!-- Renglón 1 -->
+                            <div class="form-group row">
+                                <label for="campo1" class="col-sm-3 col-form-label">Nombre:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtNombreIngrediente" placeholder="Nombre del ingrediente">
+                                </div>
+                            </div>
+
+                            <!-- Renglón 2 -->
+                            <div class="form-group row mt-2">
+                                <label for="campo2" class="col-sm-3 col-form-label">Cantidad:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtCantidadIngrediente" placeholder="0">
+                                </div>
+                            </div>
+
+                            <!-- Renglón 3 -->
+                            <div class="form-group row mt-2">
+                                <label for="campo3" class="col-sm-3 col-form-label">Unidad de medida:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtUnidadMedida">
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="insertarIngrediente();">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Actualizar ingrediente</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- Formulario con tres filas -->
+                        <form>
+                            <!-- Renglón 1 -->
+                            <div class="form-group row">
+                                <label for="campo1" class="col-sm-3 col-form-label">Nombre:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtNombreIngrediente2" placeholder="Nombre del ingrediente">
+                                </div>
+                            </div>
+
+                            <!-- Renglón 2 -->
+                            <div class="form-group row mt-2">
+                                <label for="campo2" class="col-sm-3 col-form-label">Cantidad:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtCantidadIngrediente2" placeholder="0">
+                                </div>
+                            </div>
+
+                            <!-- Renglón 3 -->
+                            <div class="form-group row mt-2">
+                                <label for="campo3" class="col-sm-3 col-form-label">Unidad de medida:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="txtUnidadMedida2">
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="actualizarIngrediente();">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="content contenedor">
             <div class="columna columna1">
                 <h2 class="titulos">INGREDIENTES</h2>
@@ -93,13 +249,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <h3 class="subtitulos">HARINA</h3>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbl1"  style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button onclick="obtenerDatosIngrediente(event);" id="btn1" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            Modificar
+                        </button>                    
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-secondary">Eliminar</button>
                     </div>
                 </div>
 
@@ -109,13 +267,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <h3 class="subtitulos">HUEVO</h3>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbl2" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button onclick="obtenerDatosIngrediente(event);" id="btn2" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            Modificar
+                        </button>                    
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-secondary">Eliminar</button>
                     </div>
                 </div>
 
@@ -125,13 +285,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <h3 class="subtitulos">LECHE</h3>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbl3" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button onclick="obtenerDatosIngrediente(event);" id="btn3" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            Modificar
+                        </button>                    
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-secondary">Eliminar</button>
                     </div>
                 </div>
 
@@ -141,13 +303,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <h3 class="subtitulos">CHOCOLATE</h3>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbl4" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button onclick="obtenerDatosIngrediente(event);" id="btn4" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            Modificar
+                        </button>                    
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-secondary">Eliminar</button>
                     </div>
                 </div>
 
@@ -157,13 +321,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <h3 class="subtitulos">AZUCAR</h3>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbl5" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button onclick="obtenerDatosIngrediente(event);" id="btn5" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            Modificar
+                        </button>                    
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-secondary">Eliminar</button>
                     </div>
                 </div>
 
@@ -173,13 +339,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <h3 class="subtitulos">MANTEQUILLA</h3>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbl6" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button onclick="obtenerDatosIngrediente(event);" id="btn6" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            Modificar
+                        </button>                    
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-secondary">Eliminar</button>
                     </div>
                 </div>
 
@@ -189,13 +357,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <h3 class="subtitulos">CREMA</h3>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbl7"style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button onclick="obtenerDatosIngrediente(event);" id="btn7" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            Modificar
+                        </button>                    
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-secondary">Eliminar</button>
                     </div>
                 </div>
 
@@ -205,13 +375,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <h3 class="subtitulos">VAINILLA</h3>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbl8" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button onclick="obtenerDatosIngrediente(event);" id="btn8" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            Modificar
+                        </button>                    
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-secondary">Eliminar</button>
                     </div>
                 </div>
             </div>
@@ -222,161 +394,211 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 <h2 class="titulos">GALLETAS</h2>
                 <div class="row mb-3">
                     <!-- Primer Elemento -->
-                    <div class="col-md-5 d-flex align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
                         <img src="../img/galleta1.jpg" class="rounded image" alt="Galleta 1">
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbll1" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button class="btn btn-primary">Agregar</button>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button onclick="obtenerDatosGalleta(event);" id="btnn1" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Modificar
+                        </button>  
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <!-- Primer Elemento -->
-                    <div class="col-md-5 d-flex align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
                         <img src="../img/galleta2.jpg" class="rounded image" alt="Galleta 1">
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbll2" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button class="btn btn-primary">Agregar</button>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button onclick="obtenerDatosGalleta(event);" id="btnn2" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Modificar
+                        </button>  
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <!-- Primer Elemento -->
-                    <div class="col-md-5 d-flex align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
                         <img src="../img/galleta3.jpg" class="rounded image" alt="Galleta 1">                    
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbll3" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button class="btn btn-primary">Agregar</button>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button onclick="obtenerDatosGalleta(event);" id="btnn3" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Modificar
+                        </button>  
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <!-- Primer Elemento -->
-                    <div class="col-md-5 d-flex align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
                         <img src="../img/galleta9.jpg" class="rounded image" alt="Galleta 1">                    
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbll4" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button class="btn btn-primary">Agregar</button>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button onclick="obtenerDatosGalleta(event);" id="btnn4" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Modificar
+                        </button>  
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <!-- Primer Elemento -->
-                    <div class="col-md-5 d-flex align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
                         <img src="../img/galleta10.jpg" class="rounded image" alt="Galleta 1">                    
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbll5" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button class="btn btn-primary">Agregar</button>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button onclick="obtenerDatosGalleta(event);" id="btnn5" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Modificar
+                        </button>  
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <!-- Primer Elemento -->
-                    <div class="col-md-5 d-flex align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
                         <img src="../img/galleta7.jpg" class="rounded image" alt="Galleta 1">                    
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label  id="lbll6"style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button class="btn btn-primary">Agregar</button>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button onclick="obtenerDatosGalleta(event);" id="btnn6" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Modificar
+                        </button>  
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <!-- Primer Elemento -->
-                    <div class="col-md-5 d-flex align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
                         <img src="../img/galleta6.jpg" class="rounded image" alt="Galleta 1">                    
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbll7" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button class="btn btn-primary">Agregar</button>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button onclick="obtenerDatosGalleta(event);" id="btnn7" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Modificar
+                        </button>  
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <!-- Primer Elemento -->
-                    <div class="col-md-5 d-flex align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
                         <img src="../img/galleta8.jpg" class="rounded image" alt="Galleta 1">                    
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbll8" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button class="btn btn-primary">Agregar</button>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button onclick="obtenerDatosGalleta(event);" id="btnn8" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Modificar
+                        </button>  
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <!-- Primer Elemento -->
-                    <div class="col-md-5 d-flex align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
                         <img src="../img/galleta5.jpg" class="rounded image" alt="Galleta 1">                    
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbll9" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button class="btn btn-primary">Agregar</button>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button onclick="obtenerDatosGalleta(event);" id="btnn9" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Modificar
+                        </button>  
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <!-- Primer Elemento -->
-                    <div class="col-md-5 d-flex align-items-center">
+                    <div class="col-md-3 d-flex align-items-center">
                         <img src="../img/galleta4.jpg" class="rounded image" alt="Galleta 1">                    
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="elemento1">
+                        <label id="lbll10" style="font-size: 20px" class="col-sm-3 col-form-label">TEXT</label>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-primary">Botón 1</button>
+                        <button class="btn btn-primary">Agregar</button>
                     </div>
                     <div class="col-md-2 d-flex align-items-center">
-                        <button class="btn btn-secondary">Botón 2</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button onclick="obtenerDatosGalleta(event);" id="btnn10" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                            Modificar
+                        </button>  
                     </div>
                 </div>
             </div>
